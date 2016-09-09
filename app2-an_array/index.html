@@ -1,9 +1,21 @@
-<html ng-app="arrayApp">
+<html ng-app="app">
 	<head>
 		<link rel="stylesheet" href="style.css"></link>
 	</head>
-	<body ng-controller="arrayController">
-	
+	<body ng-controller="controller">
+		<input
+			type="text"
+			name="name"
+			ng-model="peopleFinder.name"
+			placeholder="Filter by Name">
+	<ul ng-repeat="person in myData | filter: peopleFinder">
+		<li>{{person.name}}</li>
+		<li>{{person.email}}</li>
+		<li>{{person.dateEmployed}}</li>
+		<li>{{person.phone}}</li>
+
+
+	</ul>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
